@@ -103,5 +103,40 @@ public class Hello {
         System.out.println("double4 : " + double4);
 
         // 논리 타입
+        boolean isStop = true;
+        boolean isGo = false;
+
+        boolean isResult = (x == 20);
+        System.out.println("isResult : " + isResult);
+
+        isResult = (x != 20);
+        System.out.println("isResult : " + isResult);
+
+        isResult = (x > 20);
+        System.out.println("isResult : " + isResult);
+
+        isResult = ( 0 < x && x < 20);
+        System.out.println("isResult : " + isResult);
+
+        isResult = ( x < 0 || x > 200);
+        System.out.println("isResult : " + isResult);
+
+        boolean stop = true;
+
+        if (stop) {
+            System.out.println("중단 합니다.");
+        } else {
+            System.out.println("시작 합니다");
+        }
+
+        int int10 = 10;
+        boolean result1 = (x == 20);
+        boolean result2 = (x != 20);
+        System.out.println("result1 : " + result1);
+        System.out.println("result2 : " + result2);
+
+        // 문자열 타입
+        String string1 = "A";
+        String string2 = "홍길동";
     }
 }
