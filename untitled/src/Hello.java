@@ -1,26 +1,17 @@
 public class Hello {
-    public static void main(String[] args) {
-        int[] numbers = {3, 7, 2, 9, 4};
-
-        // 1) 배열의 첫 번째 원소로 초기화
-        int min = numbers[0];
-        int max = numbers[0];
-
-        // 2) 두 번째 원소부터 끝까지 순회하며
-        for (int i = 1; i < numbers.length; i++) {
-            int number = numbers[i];
-
-            // 최소 비교는 독립적으로
-            if (number < min) {
-                min = number;
-            }
-            // 최대 비교도 독립적으로
-            if (number > max) {
-                max = number;
-            }
+    // 1) 재귀를 이용한 팩토리얼 구현
+    public static long factorial(int n) {
+        if (n <= 1) {
+            return 1L;      // 0! = 1, 1! = 1
         }
+        return n * factorial(n - 1);
+    }
 
-        System.out.println("최솟값: " + min);
-        System.out.println("최댓값: " + max);
+    public static void main(String[] args) {
+        // 2) 1부터 10까지 팩토리얼 출력
+        for (int i = 1; i <= 10; i++) {
+            long result = factorial(i);
+            System.out.printf("%2d! = %d%n", i, result);
+        }
     }
 }
