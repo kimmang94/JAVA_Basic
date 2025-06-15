@@ -227,4 +227,115 @@ public class Hello {
         int int4 = Byte.toUnsignedInt(byte4);
         System.out.println("네 번째 바이트 부호 없는 값 : " + int4);
     }
+
+    public static void funcTest10() {
+        int score = 93;
+
+        if (score >= 90) {
+            System.out.println("점수가 90보다 큽니다");
+            System.out.println("등급은 A 입니다");
+        }
+
+        if (score < 90)
+            System.out.println("점수가 90보다 작습니다.");
+            System.out.println("등급은 B 입니다"); // if 문과는 상관없는 실행문
+
+    }
+
+    public static void funcTest11() {
+        int score = 85;
+
+        if (score >= 90) {
+            System.out.println("점수가 90보다 큽니다");
+            System.out.println("등급은 A 입니다.");
+        } else {
+            System.out.println("점수가 90보다 작습니다");
+            System.out.println("등급은 B 입니다.");
+        }
+    }
+
+    public static void funcTest12() {
+        int score = 75;
+
+        if (score >= 90) {
+            System.out.println("점수가 100 ~ 90 입니다");
+            System.out.println("등급은 A입니다");
+        } else if (score >= 80 ) {
+            System.out.println("점수가 80 ~ 89 입니다.");
+            System.out.println("등급은 B입니다");
+        } else if (score >= 70) {
+            System.out.println("점수가 70 ~ 79 입니다");
+            System.out.println("등급은 C입니다");
+        } else {
+            System.out.println("점수가 70 미만입니다.");
+            System.out.println("등급은 D입니다.");
+        }
+    }
+
+    public static void funcTest13() {
+        int num = (int)(Math.random() * 6) + 1;
+
+        if (num == 1) {
+            System.out.println("1번이 나왔습니다");
+        } else if (num == 2) {
+            System.out.println("2번이 나왔습니다");
+        } else if (num == 3) {
+            System.out.println("3번이 나왔습니다");
+        } else if (num == 4) {
+            System.out.println("4번이 나왔습니다");
+        } else if (num == 5) {
+            System.out.println("5번이 나왔습니다");
+        } else {
+            System.out.println("6번이 나왔습니다");
+        }
+    }
+
+    public static void funcTest14() {
+        int score = (int)(Math.random() * 20 ) + 81;
+        System.out.println("점수 : " + score);
+
+        String grade;
+
+        if (score >= 90) {
+            if (score >= 95) {
+                grade = "A+";
+            } else {
+                grade = "A";
+            }
+        } else {
+            if (score >= 85) {
+                grade = "B+";
+            } else {
+                grade = "B";
+            }
+        }
+
+        System.out.println("학점 : " + grade);
+    }
+
+    public static void funcTest15() {
+        int num = (int)(Math.random() * 6) + 1;
+
+        switch(num) {
+            case 1:
+                System.out.println("1번이 나왔습니다");
+                break;
+            case 2:
+                System.out.println("2번이 나왔습니다");
+                break;
+            case 3:
+                System.out.println("3번이 나왔습니다");
+                break;
+            case 4:
+                System.out.println("4번이 나왔습니다");
+                break;
+            case 5:
+                System.out.println("5번이 나왔습니다");
+                break;
+            case 6:
+                System.out.println("6번이 나왔습니다");
+                break;
+
+        }
+    }
 }
