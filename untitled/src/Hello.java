@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
-
+        
     }
 
     public static void funcTest1() {
@@ -338,4 +338,93 @@ public class Hello {
 
         }
     }
+
+    public static void funcTest16() {
+        int time = (int)(Math.random() * 4) + 8;
+        System.out.println("[현재 시간 : " + time + "시 ]");
+
+        switch (time) {
+            case 8:
+                System.out.println("출근을 합니다");
+            case 9:
+                System.out.println("회의를 합니다");
+            case 10:
+                System.out.println("업무를 봅니다");
+            default:
+                System.out.println("외근을 나갑니다");
+        }
+    }
+
+    public static void funcTest17() {
+        char grade = 'B';
+
+        switch (grade) {
+            case 'A':
+            case 'a':
+                System.out.println("우수 회원입니다");
+                break;
+            case 'B':
+            case 'b':
+                System.out.println("일반 회원입니다");
+                break;
+            default:
+                System.out.println("손님입니다");
+        }
+    }
+    // Java 12이후 Expressions
+    public static void funcTest18() {
+        char grade = 'B';
+
+        switch (grade) {
+            case 'A', 'a' -> {
+                System.out.println("우수 회원입니다");
+            }
+            case 'B', 'b' -> {
+                System.out.println("일반 회원입니다.");
+            }
+            default -> {
+                System.out.println("손님 입니다.");
+            }
+        }
+
+        switch (grade) {
+            case 'A', 'a' -> System.out.println("우수 회원입니다");
+            case 'B', 'b' -> System.out.println("일반 회원입니다");
+            default -> System.out.println("손님입니다");
+        }
+    }
+
+    public static void funcTest19() {
+        String grade = "B";
+
+        // Java 11 이전 문법
+        int score1 = 0;
+        switch(grade) {
+            case "A":
+                score1 = 100;
+                break;
+            case "B":
+                int result = 100 - 20;
+                score1 = result;
+                break;
+            default:
+                score1 = 60;
+        }
+        System.out.println("score1 : " + score1);
+
+        // Java 12부터 가능
+        int score2 = switch (grade) {
+            case "A" -> 100;
+            case "B" -> {
+                int result = 100 - 20;
+                // Java 13 부터 가능
+                yield result;
+            }
+            default -> 60;
+        };
+        System.out.println("score2 : " + score2);
+    }
+
+
+
 }
