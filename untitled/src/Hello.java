@@ -548,4 +548,25 @@ public class Hello {
         }
         System.out.println("프로그램 종료");
     }
+
+    public static void funcTest30() throws Exception {
+        Outter:for (char upper = 'A'; upper <= 'Z'; upper++) {
+        for (char lower = 'a'; lower <= 'z'; lower++) {
+            System.out.println(upper + "-" + lower);
+                if (lower == 'g') {
+                    break Outter;
+                }
+            }
+        }
+        System.out.println("프로그램 실행 종료");
+    }
+
+    public static void funcTest31() {
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 != 0) {
+                continue;
+            }
+            System.out.printf(i + " ");
+        }
+    }
 }
