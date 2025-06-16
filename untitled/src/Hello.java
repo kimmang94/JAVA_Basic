@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
-        
+
     }
 
     public static void funcTest1() {
@@ -425,6 +425,127 @@ public class Hello {
         System.out.println("score2 : " + score2);
     }
 
+    public static void funcTest20() {
+        int sum = 0;
+        sum += 1;
+        sum += 2;
+        sum += 3;
+        sum += 4;
+        sum += 5;
+        System.out.println("1 ~ 5 까지의 합 : " + sum);
 
+        int sum1 = 0;
+        for (int i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        System.out.println("1 ~ 100 까지의 합 : " + sum1);
+    }
 
+    public static void funcTest21() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i + " ");
+        }
+    }
+
+    public static void funcTest22() {
+        int sum = 0;
+        int i;
+
+        for (i = 1; i <= 100; i++) {
+            sum += i;
+        }
+
+        System.out.println("1 ~" + (i - 1) + " 합 : " + sum);
+    }
+
+    public static void funcTest23() {
+        // 부동소수점을 사용하지 말아야 한다
+        for (float x = 0.1f; x <= 1.0f; x+= 0.1f) {
+            System.out.println(x);
+        }
+    }
+
+    public static void funcTest24() {
+        for (int m = 2; m <= 9; m++) {
+            System.out.println("*** " + m + "단 ***");
+            for (int n = 1; n <= 9; n++) {
+                System.out.println(m + " x " + n + " = " + (m * n));
+            }
+        }
+    }
+
+    public static void funcTest25() {
+        int i = 1;
+        while (i <= 10) {
+            System.out.print(i + " ");
+            i++;
+        }
+    }
+
+    public static void funcTest26() {
+        int sum = 0;
+
+        int i = 1;
+        while (i <= 100) {
+            sum += i;
+            i++;
+        }
+
+        System.out.println("1~" + (i-1) + " 합 : " + sum);
+    }
+
+    public static void funcTest27() {
+        Scanner scanner = new Scanner(System.in);
+        boolean run = true;
+        int speed = 0;
+
+        while(run) {
+            System.out.println("----------------------_");
+            System.out.println("1.증속 | 2. 감속 | 3. 중지");
+            System.out.println("----------------------_");
+            System.out.println("선택 : ");
+
+            String strNum = scanner.nextLine();
+
+            if(strNum.equals("1")) {
+                speed++;
+                System.out.println("현재 속도 = " + speed);
+            } else if (strNum.equals("2")) {
+                speed--;
+                System.out.println("현재 속도 = " + speed);
+            } else if (strNum.equals("3")) {
+                run = false;
+            }
+        }
+
+        System.out.println("프로그램 종료");
+    }
+
+    public static void funcTest28() {
+        System.out.println("메시지를 입력하세요");
+        System.out.println("프로그램을 종료하려면 q를 입력하세요.");
+
+        Scanner scanner = new Scanner(System.in);
+        String inputString;
+
+        do {
+            System.out.printf(">");
+            inputString = scanner.nextLine();
+            System.out.println(inputString);
+        } while( !inputString.equals("q"));
+
+        System.out.println();
+        System.out.println("프로그램 종료");
+    }
+
+    public static void funcTest29() {
+        while(true) {
+            int num = (int)(Math.random() * 6) + 1;
+            System.out.println(num);
+            if (num == 6) {
+                break;
+            }
+        }
+        System.out.println("프로그램 종료");
+    }
 }
