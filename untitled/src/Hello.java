@@ -548,4 +548,159 @@ public class Hello {
         }
         System.out.println("프로그램 종료");
     }
+
+    public static void funcTest30() throws Exception {
+        Outter:for (char upper = 'A'; upper <= 'Z'; upper++) {
+        for (char lower = 'a'; lower <= 'z'; lower++) {
+            System.out.println(upper + "-" + lower);
+                if (lower == 'g') {
+                    break Outter;
+                }
+            }
+        }
+        System.out.println("프로그램 실행 종료");
+    }
+
+    public static void funcTest31() {
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 != 0) {
+                continue;
+            }
+            System.out.printf(i + " ");
+        }
+    }
+
+    public static void funcTest32() {
+        int[] arr1;
+        int[] arr2;
+        int[] arr3;
+
+        arr1 = new int[] {1,2,3};
+        arr2 = new int[] {1,2,3};
+        arr3 = arr2;
+
+        System.out.println(arr1 == arr2);
+        System.out.println(arr2 == arr3);
+    }
+
+    public static void funcTest33() {
+        int[] intArray = null;
+        //intArray[0] = 10; // NullPointerException
+
+        String str = null;
+        //System.out.println("총 문자 수 : " + sre.length()); // NullPointerException
+    }
+
+    public static void funcTest34() {
+        String hobby = "여행";
+        hobby = null;
+
+        String kind1 = "자동차";
+        String kind2 = kind1;
+        kind1 = null;
+        System.out.println("kind2 : " + kind2);
+    }
+
+    public static void funcTest35() {
+        String strVar1 = "홍길동";
+        String strVar2 = "홍길동";
+
+        if (strVar1 == strVar2) {
+            System.out.println("strVar1과 strVar2는 참조가 같음");
+        } else {
+            System.out.println("strVar1과 strVar2는 참조가 다름");
+        }
+
+        if(strVar1.equals(strVar2)) {
+            System.out.println("strVar1과 strVar2는 문자열이 같음");
+        }
+
+        String strVar3 = new String("홍길동");
+        String strVar4 = new String("홍길동");
+
+        if (strVar3 == strVar4) {
+            System.out.println("strVar3과 strVar4는 참조가 같음");
+        } else {
+            System.out.println("strVar3과 strVar4는 참조가 다름");
+        }
+
+        if(strVar3.equals(strVar4)) {
+            System.out.println("strVar3과 strVar4는 문자열이 같음");
+        }
+    }
+
+    public static void funcTest36() {
+        String hobby = "";
+        if(hobby.equals("")) {
+            System.out.println("hobby 변수가 참조하는 String 객체는 빈 문자열");
+        }
+    }
+
+    public static void funcTest37() {
+        String ssn = "9506241230123";
+        char sex = ssn.charAt(6);
+        switch(sex){
+            case '1':
+            case '3':
+                System.out.println("남자 입니다");
+                break;
+            case '2':
+            case '4':
+                System.out.println("여자 입니다");
+                break;
+        }
+    }
+
+    public static void funcTest38() {
+        String ssn = "9506241230123";
+        int length = ssn.length();
+        if (length == 13) {
+            System.out.println("주민등록번호 자릿수가 맞습니다");
+        } else {
+            System.out.println("주민등록번호 자릿수가 틀립니다.");
+        }
+    }
+
+    public static void funcTest39() {
+        String oldStr = "자바 문자열은 불변입니다. 자바 문자열은 String 입니다";
+        String newStr = oldStr.replace("자바", "JAVA");
+
+        System.out.println(oldStr);
+        System.out.println(newStr);
+    }
+
+    public static void funcTest40() {
+        String ssn = "880815-1234567";
+
+        String firstNum = ssn.substring(0,6);
+        System.out.println(firstNum);
+
+        String secondNum = ssn.substring(7);
+        System.out.println(secondNum);
+    }
+
+    public static void funcTest41() {
+        String subject = "자바 프로그래밍";
+
+        int location = subject.indexOf("프로그래밍");
+        System.out.println(location);
+        String substring = subject.substring(location);
+        System.out.println(substring);
+
+        location = subject.indexOf("자바");
+        if (location != -1) {
+            System.out.println("자바와 관련된 책이군요");
+        } else {
+            System.out.println("자바와 관련 없는 책이군요");
+        }
+
+        boolean result = subject.contains("자바");
+        if(result) {
+            System.out.println("자바와 관련된 책이군요");
+        } else {
+            System.out.println("자바와 관련 없는 책이군요");
+        }
+    }
 }
+
+
