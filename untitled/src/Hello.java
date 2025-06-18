@@ -701,6 +701,264 @@ public class Hello {
             System.out.println("자바와 관련 없는 책이군요");
         }
     }
+
+    public static void funcTest42() {
+        String board = "1,자바 학습,참조 타입 String을 학습합니다.,홍길동";
+
+        // 문자열 분리
+        String[] tokens = board.split(",");
+
+        // 인덱스 별로 읽기
+        System.out.println("번호 : " + tokens[0]);
+
+        System.out.println("제목 : " + tokens[1]);
+
+        System.out.println("내용 : " + tokens[2]);
+
+        System.out.println("성명 : " + tokens[3]);
+
+        System.out.println();
+
+        // for 문을 이용한 읽기
+        for(int i = 0; i < tokens.length; i++) {
+            System.out.println(tokens[i]);
+        }
+    }
+
+    public static void funcTest43() {
+        //배열 변수 선언과 배열 생성
+        String[] season = {"Spring", "Summer", "Fall", "Winter"};
+
+        // 배열의 항목값 읽기
+        System.out.println("season[0] : " + season[0]);
+        System.out.println("season[1] : " + season[1]);
+        System.out.println("season[2] : " + season[2]);
+        System.out.println("season[3] : " + season[3]);
+
+        // 인덱스 1번 항목의 값 변경
+        season[1] = "여름";
+        System.out.println("season[1] : " + season[1]);
+        System.out.println();
+
+        // 배열 변수 선언과 배열 생성
+        int[] scores = {83, 90, 87};
+
+        // 총합과 평균 구하기
+        int sum = 0;
+        for (int i = 0; i < 3; i++) {
+            sum += scores[i];
+        }
+        System.out.println("총합 : " + sum);
+        double avg = (double) sum / 3;
+        System.out.println("평균 : " + avg);
+    }
+
+    public static void funcTest44() {
+        // 배열 변수 선언
+        int[] scores;
+
+        // 배열 변수에 배열을 대입
+        scores = new int[] {83, 90, 87};
+
+        // 배열 항목의 총합을 구하고 출력
+        int sum1 = 0;
+        for(int i = 0; i < 3; i++) {
+            sum1 += scores[i];
+        }
+        System.out.println("총합 : " + sum1);
+
+        // 배열을 매개값으로 주고, printItem() 메서드 호출
+        printItem(new int[] {83, 90, 87});
+    }
+    // printItem() 메소드 선언
+    public static void printItem( int[] scores ) {
+        // 매개변수가 참조하는 배열의 항목을 출력
+        for(int i = 0; i < 3; i++) {
+            System.out.println("score[" + i + "] :" + scores[i]);
+        }
+    }
+
+    public static void funcTest45() {
+        // 배열 변수 선언과 배열 생성
+        int[] arr1 = new int[3];
+        // 배열 항목의 초기값 출력
+        for (int i = 0; i < 3; i++) {
+            System.out.println("arr1[" + i + "] : " + arr1[i] + ", ");
+        }
+
+        System.out.println();
+        // 배열 항목의 값 변경
+        arr1[0] = 10;
+        arr1[1] = 20;
+        arr1[2] = 30;
+
+        // 배열 항목의 변경 값 출력
+        for (int i = 0; i < 3; i++) {
+            System.out.println("arr1[" + i + "] : " + arr1[i] + ", ");
+        }
+        System.out.println("\n");
+
+        //  배열 변수 선언과 배열 생성
+        double[] arr2 = new double[3];
+        // 배열 항목의 초기값 출력
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr2[" + i + "] : " + arr2[i] + ", ");
+        }
+        System.out.println();
+        // 배열 항목의 값 변경
+        arr2[0] = 0.1;
+        arr2[1] = 0.2;
+        arr2[2] = 0.3;
+        // 배열 항목의 변경 값 출력
+        for (int i = 0; i < 3; i++) {
+            System.out.println("arr2[" + i + "] : " + arr2[i] + ", ");
+        }
+        System.out.println("\n");
+
+        // 배열 변수 선언과 배열 생성
+        String[] arr3 = new String[3];
+        // 배열 항목의 초기값 출력
+        for(int i = 0; i < 3; i++) {
+            System.out.println("arr3[" + i + "] : " + arr3[i] + ", ");
+        }
+        System.out.println();
+        // 배열 항목의 값 변경
+        arr3[0] = "1월";
+        arr3[1] = "2월";
+        arr3[2] = "3월";
+        // 배열 항목의 변경값 출력
+        for (int i = 0; i < 3; i++) {
+            System.out.println("arr3[" + i + "] : " + arr3[i] + ", ");
+        }
+    }
+
+    public static void funcTest46() {
+        // 배열 변수 선언과 배열 대입
+        int[] scores = {84, 90, 96};
+
+        // 배열 항목의 총합 구하기
+        int sum = 0;
+        // length 를 사용할 경우 배열의 마지막 인덱스는 배열의 길이보다 1적기 때문 조심하자
+        for(int i = 0; i < scores.length; i++) {
+            sum += scores[i];
+        }
+        System.out.println("총합 : " + sum);
+
+        // 배열 항목의 평균 구하기
+        double avg = (double) sum / scores.length;
+        System.out.println("평균 : " + avg);
+    }
+
+    public static void funcTest47() {
+        // 2차원 배열 생성
+        int[][] scores = {
+                {80, 90, 96},
+                {76, 88}
+        };
+
+        // 배열의 길이
+        System.out.println("1차원 배열 길이(반의 수) : " + scores.length);
+
+        System.out.println("2차원 배열 길이(첫 번째 반의 학생 수) : " + scores[0].length);
+        System.out.println("2차원 배열 길이(두 번째 반의 학생 수) : " + scores[1].length);
+
+        // 첫 번째 반의 세 번째 학생의 점수 읽기
+        System.out.println("scores[0][2] : " + scores[0][2]);
+
+        // 두 번째 반의 두 번째 학생의 점수 읽기
+        System.out.println("scores[1][1] : " + scores[1][1]);
+
+        // 첫 번째 반의 평균 점수 구하기
+        int class1Sum = 0;
+        for(int i = 0; i < scores[0].length; i++) {
+            class1Sum += scores[0][i];
+        }
+        double class1Avg = (double) class1Sum / scores[0].length;
+        System.out.println("첫 번째 반의 평균 점수 : " + class1Avg);
+
+        // 두 번째 반의 평균 점수 구하기
+        int class2Sum = 0;
+        for (int i = 0; i < scores[1].length; i++) {
+            class2Sum += scores[0][i];
+        }
+        double class2Avg = (double)class2Sum / scores[1].length;
+        System.out.println("두 번쨰 반의 평균 점수 : " + class2Avg);
+
+        // 전체 학생의 평균 점수 구하기
+        int totalStudent = 0;
+        int totalSum = 0;
+        for (int i = 0; i < scores.length; i++){
+            totalStudent += scores[i].length;
+            for (int k = 0; k < scores[i].length; k++) {
+                totalSum += scores[i][k];
+            }
+        }
+        double totalAvg = (double) totalSum / totalStudent;
+        System.out.println("전체 학생의 평균 점수 : " + totalAvg);
+    }
+
+    public static void funcTest48() {
+        // 각 반의 학생 수가 3명으로 동일할 경우 점수 저장을 위한 2차원 배열 생성
+        int[][] mathScores = new int[2][3];
+        // 배열 항목 초기값 출력
+        for(int i = 0; i < mathScores.length; i++) {
+            for (int k = 0; k < mathScores[i].length; k++) {
+                System.out.println("mathSores[" + i + "][" + k + "] : " + mathScores[i][k]);
+            }
+        }
+
+        System.out.println();
+        // 배열 항목 값 변경
+        mathScores[0][0] = 80;
+        mathScores[0][1] = 83;
+        mathScores[0][2] = 85;
+        mathScores[1][0] = 86;
+        mathScores[1][1] = 90;
+        mathScores[1][2] = 92;
+        // 전체 학생의 수학 평균 구하기
+        int totalStudent = 0;
+        int totalMathSum = 0;
+        for (int i = 0; i < mathScores.length; i++) {
+            totalStudent += mathScores[i].length;
+            for (int k = 0; k < mathScores[i].length; k++){
+                totalMathSum += mathScores[i][k];
+            }
+        }
+        double totalMathAvg = (double) totalMathSum / totalStudent;
+        System.out.println("전체 학생의 수학 평균 점수 : " + totalMathAvg);
+        System.out.println();
+
+        // 각 반의 학생 수가 다를 경우 점수 저장을 위한 2차원 배열 생성
+        int[][] englishScores = new int[2][];
+        englishScores[0] = new int[2];
+        englishScores[1] = new int[3];
+        // 배열 항목 초기값 출력
+        for (int i = 0; i < englishScores.length; i++) {
+            for (int k = 0; k < englishScores[i].length; k++) {
+                System.out.println("englishScroes[" + i + "][" + k + "] :" + englishScores[i][k]);
+            }
+        }
+        System.out.println();
+
+        // 배열 항목값 변경
+        englishScores[0][0] = 90;
+        englishScores[0][1] = 91;
+        englishScores[1][0] = 92;
+        englishScores[1][1] = 93;
+        englishScores[1][2] = 94;
+        // 전체 학생의 영어 평균 구하기
+        totalStudent = 0;
+        int totalEnglishSum = 0;
+        for (int i = 0; i < englishScores.length; i++) {
+            totalStudent += englishScores[i].length;
+            for (int k = 0; k < englishScores[i].length; k++) {
+                totalEnglishSum += englishScores[i][k];
+            }
+        }
+        double totalEnglishAvg = (double) totalEnglishSum / totalStudent;
+        System.out.println("전체 학생의 영어 평균 점수 : " + totalEnglishAvg);
+    }
+    
 }
 
 
