@@ -958,6 +958,18 @@ public class Hello {
         double totalEnglishAvg = (double) totalEnglishSum / totalStudent;
         System.out.println("전체 학생의 영어 평균 점수 : " + totalEnglishAvg);
     }
+
+    public static void funcTest49() {
+        String[] strArray = new String[3];
+        strArray[0] = "Java";
+        strArray[1] = "Java";
+        strArray[2] = new String("Java");
+
+        System.out.println(strArray[0] == strArray[1]);
+        System.out.println(strArray[0] == strArray[2]);
+        System.out.println(strArray[0].equals((strArray[2])));
+
+    }
     
 }
 
