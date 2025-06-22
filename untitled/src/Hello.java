@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Hello {
@@ -968,6 +969,91 @@ public class Hello {
         System.out.println(strArray[0] == strArray[1]);
         System.out.println(strArray[0] == strArray[2]);
         System.out.println(strArray[0].equals((strArray[2])));
+
+    }
+
+    public static void funcTest50() {
+        // 길이 3 인 배열
+        int[] oldIntArray = {1,2,3};
+
+        // 길이 5인 배열을 새로 생성
+        int[] newIntArray = new int[5];
+
+        // 배열 항목 복사
+        for (int i = 0; i < newIntArray.length; i++) {
+            newIntArray[i] = oldIntArray[i];
+        }
+        // 배열 항목 출력
+        for (int i = 0; i < newIntArray.length; i++) {
+            System.out.print(newIntArray[i] + ", ");
+        }
+    }
+
+    public static void funcTest51() {
+        // 길이 3 인 배열
+        String[] oldStrArray = { "java", "array", "copy"};
+        // 길이 5 인 배열을 새로 생성
+        String[] newStrArray =  new String[5];
+        // 배열 항목 복사
+        System.arraycopy(oldStrArray,0 , newStrArray, 0 , oldStrArray.length);
+        // 배열 항목 출력
+        for (int i = 0; i < newStrArray.length; i++){
+            System.out.print(newStrArray[i] + ", ");
+        }
+
+    }
+
+    public static void funcTest52() {
+        // 배열 변수 선언과 배열 생성
+        int[] scores = {95, 71, 84, 83, 93, 87};
+        // 배열 항목 전체 합 구하기
+        int sum = 0;
+        for (int score : scores) {
+            sum += score;
+        }
+        System.out.println("점수 총합 = " + sum);
+        // 배열 항목 전체 평균 구하기
+        double avg = (double) sum / scores.length;
+        System.out.println("점수 평균 = " + avg);
+    }
+
+    public enum Week {
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THIRSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY,
+    }
+
+    public static void funcTest53() {
+        // Week 열거 타입 변수 선언
+        Week today = null;
+
+        // Calendar 얻기
+        Calendar cal = Calendar.getInstance();
+
+        // 오늘의 요일 얻기 (1 ~ 7)
+        int week = cal.get(Calendar.DAY_OF_WEEK);
+
+        // 숫자를 열거 상수로 변환해서 변수에 대입
+        switch (week) {
+            case 1 : today = Week.SUNDAY; break;
+            case 2 : today = Week.MONDAY; break;
+            case 3 : today = Week.TUESDAY; break;
+            case 4 : today = Week.WEDNESDAY; break;
+            case 5 : today = Week.THIRSDAY; break;
+            case 6 : today = Week.FRIDAY; break;
+            case 7 : today = Week.SATURDAY; break;
+        }
+
+        // 열거 타입 변수를 사용
+        if (today == Week.SUNDAY) {
+            System.out.println("일요일 에는 축구를 합니다");
+        } else  {
+            System.out.println("열심히 자바를 공부합니다.");
+        }
 
     }
     
