@@ -1076,6 +1076,44 @@ public class Hello {
         Student s2 = new Student();
         System.out.println("s2 변수가 또 다른 Student 객체를 잠조합니다");
     }
+
+    public static class Car {
+        // 필드 선언
+        String model;
+        boolean start;
+        int speed;
+    }
+
+    public static void funcTest55() {
+        // 객체 생성
+        Car myCar = new Car();
+
+        // Car 객체의 필드값 읽기
+        System.out.println("모델명 : " + myCar.model);
+        System.out.println("모델명 : " + myCar.start);
+        System.out.println("모델명 : " + myCar.speed);
+    }
+
+    public static class Car2 {
+        // 필드 선언
+            String company = "현대자동차";
+            String model = "그랜저";
+            String color = "검정";
+            int maxSpeed = 350;
+            int speed;
+    }
+
+    public static void funcTest56() {
+        // Car 객체 생성
+        Car2 myCar = new Car2();
+
+        // Car 객체의 필드값 읽기
+        System.out.println("제작 회사 : " + myCar.company);
+        System.out.println("모델명 : " + myCar.model);
+        System.out.println("색상 : " + myCar.color);
+        System.out.println("최고 속도 : " + myCar.maxSpeed);
+        System.out.println("현재 속도 : " + myCar.speed);
+    }
 }
 
 
