@@ -1114,6 +1114,45 @@ public class Hello {
         System.out.println("최고 속도 : " + myCar.maxSpeed);
         System.out.println("현재 속도 : " + myCar.speed);
     }
+
+    public static class Car3 {
+        Car3(String model, String color, int maxSpeed) {
+
+        }
+    }
+
+    public static void funcTest57() {
+        Car3 myCar = new Car3("그랜져", "검정", 250);
+    }
+
+    public static class Korean {
+        // 필드 선언
+        String nation = "대한민국";
+        String name;
+        String ssn;
+
+        // 생성자 선언
+        public Korean(String n, String s) {
+            name = n;
+            ssn = s;
+        }
+    }
+
+    public static void funcTest58() {
+        // Korean 객체 생성
+        Korean k1 = new Korean("박자바", "011244-1235678");
+
+        // Korean 객체 데이터 읽기
+        System.out.println("k1.nation : " + k1.nation);
+        System.out.println("k1.name : " + k1.name);
+        System.out.println("k1.ssn : " + k1.ssn);
+
+        // 또 다른 Korean 객체 생성
+        Korean k2 = new Korean("김자바", "930404-1234566");
+        System.out.println("k2.nation : " + k2.nation);
+        System.out.println("k2.name : " + k2.name);
+        System.out.println("k2.ssn : " + k2.ssn);
+    }
 }
 
 
